@@ -1,0 +1,82 @@
+Array:  [9,8,8,3,3,2,1,0]
+List:   [0]->[1]->[2]->[3]->[3]->[8]->[8]->[9]
+
+############ Array ############
+Step 0:
+Array:      [9,8,8,3,3,2,1,0]
+Element:     ^
+Index:       0
+Action:      if 9 > 4, raise index by 1
+
+Step 1:
+Array:      [9,8,8,3,3,2,1,0]
+Element:       ^
+Index:       1
+Action:      if 8 > 4, raise index by 1
+
+Step 2:
+Array:      [9,8,8,3,3,2,1,0]
+Element:         ^
+Index:       2
+Action:      if 8 > 4, raise index by 1
+
+Step 3:
+Array:      [9,8,8,3,3,2,1,0]
+Element:           ^
+Index:       3
+Action:      if 3 < 4, raise index by 1
+             else: 
+
+             Step 4:
+             Array:      [9,8,8,4,3,3,2,1,0]
+             Element:           ^
+             Index:       3
+             Action:     Slice the array at the current index, to create 2 
+                             sub-arrays. e.g. x, y = array[:index], array[index:]
+                         Then concatinate the 4 with the sub-arrays.
+                             e.g. new_array = x + [4] + y 
+                         Finally, switch the 'array' pointer to point to the 
+                             new array. e.g. array = new_array
+
+############ List ############
+
+Step 0:
+List:       [0]->[1]->[2]->[3]->[3]->[8]->[8]->[9]
+Element:     ^
+Action:     if 0 < 4 and node.next_node < 4, 
+                move to the next element by following the pointer
+
+Step 1:
+List:       [0]->[1]->[2]->[3]->[3]->[8]->[8]->[9]
+Element:          ^
+Action:     if 1 < 4 and node.next_node < 4, 
+                move to the next element by following the pointer
+
+Step 2:
+List:       [0]->[1]->[2]->[3]->[3]->[8]->[8]->[9]
+Element:               ^
+Action:     if 2 < 4 and node.next_node < 4, 
+                move to the next element by following the pointer
+
+Step 3:
+List:       [0]->[1]->[2]->[3]->[3]->[8]->[8]->[9]
+Element:                    ^
+Action:     if 3 < 4 and node.next_node < 4, 
+                move to the next element by following the pointer
+
+Step 4:
+List:       [0]->[1]->[2]->[3]->[3]->[8]->[8]->[9]
+Element:                         ^
+Action:     if 3 < 4 and node.next_node < 4, 
+                move to the next element by following the pointer
+            else:
+                Step 4:
+                List:       [0]->[1]->[2]->[3]->[3]->[4]->[8]->[8]->[9]
+                Element:                              ^
+                Action:     Set the next element as the next-next element.
+                                e.g. future_elem = node.next_node
+                            Create a new node, link it to the current node, and set its
+                                value to 4.
+                                e.g. new_node = node.next_node
+                                    new_node.elem = 4
+                                    new_node.next_node = future_elem
