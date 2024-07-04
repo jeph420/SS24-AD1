@@ -1,0 +1,4 @@
+On average, Radix Sort has a time complexity of O(nd). 
+The amount of buckets does not affect the complexity as elements are instantly placed in the bucket of equal number, essentially a direct insert into a specific index with runtime O(1).
+Therefore the runtime is affected by both the amount of integers (how many elements to iterate through) and the length of the longest number (how many iterations the programm has to do).
+So if you're iterating through 'n'-many numbers 'd'-times, then the runtime is O(nd)

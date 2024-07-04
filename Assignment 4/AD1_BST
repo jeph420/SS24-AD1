@@ -1,0 +1,17 @@
+1. Insert: My key - 089
+	1. 089 < 571: Go left
+	2. 089 < 248: Go left
+	3. 089 < 137: Go left
+	4. Replace empty node with '089'
+	
+2. Remove: Node - 571
+	1. Search for an InOrder-Successor by going; right, left, left, left, left, ...
+	2. If the left-child node is None; store the parent of the current node, as well as the right-child node.
+	3. Replace the root node with the current node, and the stored-parent.left() with the store-right-child.
+	
+3. Insert: My key - 123
+	1. 123 < 682: Go left
+	2. 123 < 248: Go left
+	3. 123 < 137: Go left
+	4. 123 > 089: Go right
+	5. Replace empty node with '123'
